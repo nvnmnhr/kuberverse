@@ -41,7 +41,7 @@ echo "********** $KVMSG"
 echo "********** $KVMSG ->> Installing Required & Recommended Packages"
 echo "********** $KVMSG"
 echo "********** $KVMSG"
-apt-get install -y --allow-unauthenticated avahi-daemon libnss-mdns traceroute htop httpie bash-completion docker-ce=5:18.09.1~3-0~ubuntu-xenial kubeadm kubelet kubectl
+apt-get install -yV --fix-missing --allow-unauthenticated avahi-daemon libnss-mdns traceroute htop httpie bash-completion docker-ce=5:18.09.1~3-0~ubuntu-xenial kubeadm kubelet kubectl
 
 # Setup Docker daemon.
 cat > /etc/docker/daemon.json <<EOF
