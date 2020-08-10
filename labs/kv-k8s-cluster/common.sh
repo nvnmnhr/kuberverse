@@ -18,7 +18,8 @@ apt-get update && apt-get install apt-transport-https ca-certificates curl softw
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 
 ### Kubernetes Repo
-echo "deb  http://apt.kubernetes.io/  kubernetes-xenial  main" > /etc/apt/sources.list.d/kubernetes.list
+#echo "deb  http://apt.kubernetes.io/  kubernetes-xenial  main" > /etc/apt/sources.list.d/kubernetes.list
+echo "deb  http://apt.kubernetes.io/  kubernetes-xenial main" > /etc/apt/sources.list.d/kubernetes.list
 
 ### Add Docker’s official GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
@@ -41,7 +42,8 @@ echo "********** $KVMSG"
 echo "********** $KVMSG ->> Installing Required & Recommended Packages"
 echo "********** $KVMSG"
 echo "********** $KVMSG"
-apt-get install -yV --fix-missing --allow-unauthenticated avahi-daemon libnss-mdns traceroute htop httpie bash-completion docker-ce=5:18.09.1~3-0~ubuntu-xenial kubeadm kubelet kubectl
+#apt-get install -yV --fix-missing --allow-unauthenticated avahi-daemon libnss-mdns traceroute htop httpie bash-completion docker-ce=5:18.09.1~3-0~ubuntu-xenial kubeadm kubelet kubectl
+apt-get install -yV --fix-missing --allow-unauthenticated avahi-daemon libnss-mdns traceroute htop httpie bash-completion docker-ce kubeadm kubelet kubectl
 
 # Setup Docker daemon.
 cat > /etc/docker/daemon.json <<EOF
